@@ -36,9 +36,7 @@ class CollectionViewNestedTableViewCell: UITableViewCell {
     }
 	
 	override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-		//用 CGFloat.greatestFiniteMagnitude 會爆掉
-		let infiniteWidth: CGFloat = 100000.0
-		collectionView.frame = CGRect(x: 0, y: 0, width: targetSize.width, height: infiniteWidth)
+		collectionView.frame = CGRect(x: 0, y: 0, width: targetSize.width, height: targetSize.height)
 		collectionView.layoutIfNeeded()
 		return collectionView.collectionViewLayout.collectionViewContentSize
 	}
